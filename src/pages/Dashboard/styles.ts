@@ -18,6 +18,7 @@ export const Form = styled.form<FormProps>`
   max-width: 700;
 
   display: flex;
+  filter: drop-shadow(-5px 5px 10px #5140a9);
 
   input {
     flex: 1;
@@ -74,6 +75,7 @@ export const Repositories = styled.div`
     text-decoration: none;
     display: flex;
     align-items: center;
+    filter: drop-shadow(-5px 5px 5px #5140a9);
 
     transition: transform 0.2s;
 
