@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { shade } from 'polished';
+import { shade, lighten } from 'polished';
 
 interface FormProps {
   hasError: boolean;
@@ -7,7 +7,7 @@ interface FormProps {
 
 export const Title = styled.h1`
   font-size: 48px;
-  color: #3a3a3a;
+  color: ${(props) => props.theme.colors.text};
   margin-top: 80px;
   max-width: 450px;
   line-height: 56px;
@@ -18,14 +18,16 @@ export const Form = styled.form<FormProps>`
   max-width: 700;
 
   display: flex;
-  filter: drop-shadow(-5px 5px 10px #5140a9);
+  filter: drop-shadow(
+    -5px 5px 10px ${(props) => (props.theme.title === 'light' ? shade(0.5, props.theme.colors.background) : lighten(0.5, props.theme.colors.background))}
+  );
 
   input {
     flex: 1;
     height: 70px;
     padding: 0 24px;
     border-radius: 5px 0 0 5px;
-    color: #3a3a3a;
+    color: ${(props) => props.theme.colors.inputText};
     border: 2px solid #fff;
     border-right: 0;
 
@@ -67,7 +69,7 @@ export const Repositories = styled.div`
   max-width: 700px;
 
   a {
-    background: #fff;
+    background: ${(props) => props.theme.colors.primary};
     border-radius: 5px;
     width: 100%;
     padding: 24px;
@@ -75,7 +77,9 @@ export const Repositories = styled.div`
     text-decoration: none;
     display: flex;
     align-items: center;
-    filter: drop-shadow(-5px 5px 5px #5140a9);
+    filter: drop-shadow(
+      -5px 5px 10px ${(props) => shade(0.5, props.theme.colors.background)}
+    );
 
     transition: transform 0.2s;
 

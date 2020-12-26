@@ -48,7 +48,8 @@
         "ts": "never",
         "tsx": "never"
       }
-    ]
+    ],
+    "multiline-ternary": ["error", "always-multiline"]
   },
   "settings": {
     "import/resolver": {

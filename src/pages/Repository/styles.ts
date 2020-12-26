@@ -35,7 +35,9 @@ export const RepositoryInfo = styled.section`
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    filter: drop-shadow(-5px 5px 10px #5140a9);
+    filter: drop-shadow(
+      -5px 5px 10px ${(props) => shade(0.5, props.theme.colors.background)}
+    );
   }
 
   div {
@@ -81,7 +83,9 @@ export const RepositoryInfo = styled.section`
 
 export const Issues = styled.div`
   margin-top: 80px;
-  filter: drop-shadow(-5px 5px 5px #5140a9);
+  filter: drop-shadow(
+    -5px 5px 10px ${(props) => shade(0.5, props.theme.colors.background)}
+  );
 
   a {
     background: #fff;

@@ -8,11 +8,14 @@ export default createGlobalStyle`
     padding: 0;
     outline: 0;
     box-sizing: border-box;
+    transition: all 0.2s linear;
   }
 
   body {
-    background: #F0f0f5 url(${githubBackground}) no-repeat 50% top;
-    -webkit-font-smoothing: antialiased;
+    background: ${(props) =>
+      props.theme.colors.background} url(${githubBackground}) no-repeat 50% top;
+    /* https://usabilitypost.com/2012/11/05/stop-fixing-font-smoothing/ */
+    /* -webkit-font-smoothing: antialiased; */
   }
 
   body, input, button {
